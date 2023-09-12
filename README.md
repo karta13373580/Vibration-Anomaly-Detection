@@ -15,6 +15,13 @@
 我們從實際的船舶上錄製的震動訊號可以發現正常資料(WasteWaterPump)與異常資料(NoWaterPump)在Frequency Domain上的
 Amplitude具有一定程度的差異，正常Amplitude大部分都落在個位數區間，但異常則超過，因此採用直接統計的方式來做為模型訓練的特徵
 
+## 實驗結果
+
+| Model | Dataset | Acc |
+| :----: | :----: | :----: |
+| 離散小波轉換+SVM | 小型馬達模擬 | 100% |
+| Frequency Doamin+SVM | 實際船舶錄製 | 100% |
+
 ## 資料集介紹
 ### Vibration-Anomaly-Detection_1  
 正常震動訊號有100筆，異常震動訊號有10筆，該資料為室內模擬的小型馬達震動訊號  
@@ -24,13 +31,6 @@ Amplitude具有一定程度的差異，正常Amplitude大部分都落在個位�
 正常震動訊號有227筆，異常震動訊號有58筆，該資料為實際於船舶上收集之引擎震動訊號
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/4.png">
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/5.png">
-
-## 實驗結果
-
-| Model | Dataset | Acc |
-| :----: | :----: | :----: |
-| 離散小波轉換+SVM | 小型馬達模擬 | 100% |
-| Frequency Doamin+SVM | 實際船舶錄製 | 100% |
 
 ## 實驗環境
 
@@ -43,14 +43,18 @@ Amplitude具有一定程度的差異，正常Amplitude大部分都落在個位�
 ```
 pip install -r requirements.txt
 ```
+
 ## 模型使用
 ### 訓練與測試
 ```
 python main.py
 ```
+
 ## Jetson Nano 2GB
 ### 板子運行畫面
-<img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/4.png">
+<img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/6.png">
+### 板子規格
+<img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/7.png">
 
 ## 參考資料
 * <https://hdl.handle.net/11296/38mzge>
