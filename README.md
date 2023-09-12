@@ -17,7 +17,7 @@ Amplitude具有一定程度的差異，正常Amplitude大部分都落在個位�
 
 ## 資料集介紹
 ### Vibration-Anomaly-Detection_1  
-正常震動訊號有100筆，異常震動訊號有10筆，該資料為室內模擬的馬達震動訊號  
+正常震動訊號有100筆，異常震動訊號有10筆，該資料為室內模擬的小型馬達震動訊號  
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/3.png">  
 
 ### Vibration-Anomaly-Detection_2  
@@ -27,94 +27,27 @@ Amplitude具有一定程度的差異，正常Amplitude大部分都落在個位�
 
 ## 實驗結果
 
-
-
-<img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/%E6%93%B7%E5%8F%96.PNG">
-
-| Machine ID | Fan | Pump | Slider | Valve | Average |
-| :----: | :----: | :----: | :----: | :----: | :----: |
-| 00 | 73.18% | 97.05% | 96.82% | 66.43% | 84.94% |
-| 02 | 90.03% | 76.47% | 82.01% | 98.33% | 86.79% |
-| 04 | 80.31% | 86.85% | 59.60% | 55.83% | 75.24% |
-| 06 | 96.25% | 86.79% | 62.55% | 73.92% | 73.62% |
-
-## 與其他論文實驗比較
-| Model | Fan | Pump | Slider | Valve |
-| :----: | :----: | :----: | :----: | :----: |
-| Autoencoder | 65.83% | 72.89% | 84.76% | 66.28% |
-| LSTM- Autoencoder | 67.32% | 73.94% | 84.99% | 67.82% |
-| Dictionary Learning-Autoencoder | 79.60% | 84.91% | 82.00% | 72.33% |
-| Contrastive Learning | 80.11% | 70.12% | 77.43% | 84.17% |
-| Baseline-GANomaly | 80.34% | 83.90% | 72.70% | 68.51% |
-| Proposed | 84.94% | 86.79% | 75.24% | 73.62% |
+| Model | Dataset | Acc |
+| :----: | :----: | :----: |
+| 離散小波轉換+SVM | 小型馬達模擬 | 100% |
+| Frequency Doamin+SVM | 實際船舶錄製 | 100% |
 
 ## 實驗環境
+
 * CUDA: 11.3
 * Python: 3.8.0
-* Pytorch: 1.12.0
-* pytorch-lightning==1.6.1
+* matplotlib==3.3.4
+* PyWavelets==1.1.1
+* statsmodels==0.12.2
+* joblib==1.1.1
 ```
 pip install -r requirements.txt
 ```
-
-## 建立資料集
-請先建立一個data資料夾，資料擺放方式如下: 
-```
--dataset/
-  -train/
-    -normal/
-      -00000000.wav
-      -00000001.wav
-      -00000002.wav
-  -val/
-    -normal/
-      -00000003.wav
-  -thr/
-    -normal/
-      -00000004.wav
-    -abnormal/
-      -00000000.wav
-      -00000001.wav
-      -00000002.wav
-  -test/
-    -normal/
-      -00000005.wav
-    -abnormal/
-      -00000003.wav
-```
 ## 模型使用
-### yml檔參數配置
+### 訓練與測試
+```
+python main.py
+```
 
-
-| 模型參數 | 描述 | 聲音參數 | 描述 |
-| :---- | :---- | :---- | :---- |
-| root | 資料集路徑 | sample_rate | 聲音每秒採樣率 |
-| checkpoint_path | 模型權重路徑 | max_waveform_length | 模型所要使用的聲音最大採樣率 |
-| threshold | 測試階段需定義閥值 | n_mels | 梅爾頻譜轉換頻帶 |
-| early_stopping | 是否啟用模型提早結束 | n_fft | 快速傅立葉轉換的Window大小 |
-| max_epochs | 定義模型最大訓練次數 | hop_length | Window跳躍長度 |
-
-### 訓練
-```
-python main.py --config MIMII_p6_dB_pump_id_00_yaml/config_MIMII_p6_dB_pump_id_00_normal_abnormal_train.yml --str_kwargs mode=train
-```
-### 查看Threshold
-```
-python main.py --config MIMII_p6_dB_pump_id_00_yaml/config_MIMII_p6_dB_pump_id_00_normal_abnormal_threshold.yml --str_kwargs mode=threshold
-```
-### 測試
-```
-python main.py --config MIMII_p6_dB_pump_id_00_yaml/config_MIMII_p6_dB_pump_id_00_normal_abnormal_test.yml --str_kwargs mode=test
-```
-## UI介面
-<img src="https://github.com/karta13373580/Audio-Anomaly-Detection/blob/main/result_photo/github_photo/UI%E5%BD%B1%E7%89%87%20(online-video-cutter.com).gif">
-
-### 啟用UI
-```
-python start.py --config MIMII_p6_dB_pump_id_00_yaml/config_MIMII_p6_dB_pump_id_00_normal_abnormal_gui.yml --str_kwargs mode=predict_gui
-```
 ## 參考資料
-* <https://github.com/fastyangmh/AudioGANomaly>
-* <https://github.com/lucidrains/halonet-pytorch>
-* <https://blog.csdn.net/weixin_38241876/article/details/109853433>
-* <https://blog.csdn.net/pipisorry/article/details/53635895>
+* <https://hdl.handle.net/11296/38mzge>
