@@ -1,4 +1,4 @@
-# Vibration-Anomaly-Detection
+![image](https://github.com/karta13373580/Vibration-Anomaly-Detection/assets/33410973/43faf549-3865-4927-84ba-b0a3ee05570a)# Vibration-Anomaly-Detection
 
 船舶上的引擎及大型馬達在運轉的時候會產生震動訊號，我們可藉由檢測此訊號來判斷船舶是否出現損壞故障，以免造成危險。
 本專案使用SVM模型方法進行實驗，並且將震動訊號做一階的離散小波轉換，
@@ -48,6 +48,9 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
+## Jetson Nano 2GB
+### 板子運行畫面
+<img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/4.png">
 
 ## 參考資料
 * <https://hdl.handle.net/11296/38mzge>
