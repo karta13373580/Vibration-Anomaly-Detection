@@ -5,10 +5,12 @@
 提取出標準差與絕對中位差兩種重要的資訊當作模型訓練的特徵，最終準確率在實際的船舶上錄製與我們使用小型馬達模擬的兩個震動訊號資料集皆達到100%。
 
 ## 資料集介紹
-### Vibration-Anomaly-Detection_1 : 正常震動訊號有100筆，異常震動訊號有10筆，該資料為室內模擬的馬達震動訊號  
+### Vibration-Anomaly-Detection_1 : 
+正常震動訊號有100筆，異常震動訊號有10筆，該資料為室內模擬的馬達震動訊號  
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/3.png">  
 
-### Vibration-Anomaly-Detection_2 : 正常震動訊號有227筆，異常震動訊號有58筆，該資料為船舶上收集之引擎震動訊號
+### Vibration-Anomaly-Detection_2 : 
+正常震動訊號有227筆，異常震動訊號有58筆，該資料為實際於船舶上收集之引擎震動訊號
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/4.png">
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/5.png">
 
