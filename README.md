@@ -6,14 +6,17 @@
 
 ## 資料集介紹
 Vibration-Anomaly-Detection_1 : 正常震動訊號有100筆，異常震動訊號有10筆，該資料為室內模擬的馬達震動訊號  
+<img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/3.png">
 Vibration-Anomaly-Detection_2 : 正常震動訊號有227筆，異常震動訊號有58筆，該資料為實際於船舶上收集之引擎震動訊號
+<img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/4.png">
+<img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/5.png">
 
 ## 方法
 Vibration-Anomaly-Detection_1
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/%E6%93%B7%E5%8F%96.PNG">
 我們使用小型馬達所模擬之震動訊號其Shape是(100, 1500, 4)，並且藉由觀察正常資料(Water)與異常資料(NoWater)兩種差異，分別將x，y，z軸分開去做一階的離散小波轉換，
 分解出較為突出的高頻訊號特徵，進而降低雜訊干擾，最後將此高頻訊號特徵結合統計方式，各自計算標準差與絕對中位差，最後輸入的單筆震動訊號特徵為六維
-<img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/%E6%93%B7%E5%8F%96.PNG">
+
 
 Vibration-Anomaly-Detection_2
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/%E6%93%B7%E5%8F%96.PNG">
