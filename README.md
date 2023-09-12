@@ -53,6 +53,7 @@ python main.py
 ## Jetson Nano 2GB
 ### 板子運行畫面
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/6.png">
+
 ### 板子規格
 <img src="https://github.com/karta13373580/Vibration-Anomaly-Detection/blob/main/github_photo/7.png">
 
